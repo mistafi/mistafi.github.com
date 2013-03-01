@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+    	<!-- MIU Project 4 Gold-->
+    	<!-- Joshua Wisecup -->
+    	<!-- Term 1302 -->
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>Pebbly</title>
+        <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="pebbly, pebble, track, location, retrace, follow">
+        <meta name="description" content="Keep track of where you've been so you can retrace your steps.">
+        <meta name="author" content="Joshua Wisecup">
+        <meta name="robots" content="noindex,nofollow">
+        
+        <!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+
+         <!-- Le styles -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+        <!--<link href="css/bootstrap.css" rel="stylesheet">
+       	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet"> -->
+        <link href="css/pebbly.css" rel="stylesheet">
+        <link href="css/gold.css" rel="stylesheet">
+
+        <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+        
+                <!-- Le javascript
+            ================================================== -->
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script src="js/libs/jquery.validate.min.js"></script>
+        <script src="js/json.js"></script>
+        <script src="js/main.js"></script>
+        <!-- <script src="js/bootstrap.js"></script> -->
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements
+ 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+        </script> -->
+
+    	<!-- Le fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="img/favicon.png">
+	</head>
+
+    <body>
+
+
+<!-- Start of home page -->
+
+	<div data-role="page" id="home" data-url="home" data-theme="a" class="homepage">
+
+		<div class="header" data-role="header" data-position="fixed" data-theme="a">
+        	<h1>Pebbly</h1>
+        </div><!-- /header -->
+        
+	<div data-role="content">	<!-- /content -->
+        
+			<div class="ui-grid">
+                <div class="item active">
+                  <img src="img/pebble_sm.jpg" alt="">
+                    <div class="carousel-caption">
+                      <h1>Retrace Your Steps</h1>
+                      <a class="itemButton" href="#newItem" data-role="button" data-theme="a" data-inline="true">Add a Pebble</a>
+                    </div>
+                </div>    		
+            </div><!-- /ui-grid -->
+            
+            
+            
+              <p class="lead">Save your faves. Get back again.</p>
+                    
+                 <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search your pebbles..." data-theme="a">
+        
+                    <li class="ui-screen-hidden">Bella's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Bella's</h3>
+                                <p>700 Folkerth Ave<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 9<br/>
+                                Date of Visit: 01-21-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Dress Place
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Dress Place</h3>
+                                <p>455 Major Way<br/>
+                                Sidney, OH 45365<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 02-04-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>   
+                    <li class="ui-screen-hidden">Family Guys
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Family Guys</h3>
+                                <p>Highway 44<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 02-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Fill 'er Up
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Fill 'er Up</h3>
+                                <p>865 James St<br/>
+                                Xenia, OH 49905<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Flo's Diner
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Flo's Diner</h3>
+                                <p>250 Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Joey's Pet Mart
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Joey's Pet Mart</h3>
+                                <p>6600 Martin Ave<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 5<br/>
+                                Date of Visit: 01-28-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>  
+                    <li class="ui-screen-hidden">Johnny's Pizza
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Johnny's Pizza</h3>
+                                <p>300 W Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-30-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>        
+                    <li class="ui-screen-hidden">Johnson's BP
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Johnson's BP</h3>
+                                <p>800 Alameda Freeway<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 5<br/>
+                                Date of Visit: 01-18-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Lucky's Garage Warehouse
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Lucky's Garage Warehouse</h3>
+                                <p>465 Circle Dr<br/>
+                                Sidney, OH 45365<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 02-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Mac's Clothing for Kids
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Mac's Clothing for Kids</h3>
+                                <p>455 Fifth St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-05-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Michael's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Michael's</h3>
+                                <p>55 Allen Way<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-25-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Mikey's Pizza
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Mikey's Pizza</h3>
+                                <p>900 Versailles Ave<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 02-01-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Rojo's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Rojo's</h3>
+                                <p>233 3rd St<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Shelly's Shell
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Shelly's Shell</h3>
+                                <p>22 Fifth Ave<br/>
+                                Dayton, OH 43001<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-15-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Showman's BP
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Showman's BP</h3>
+                                <p>877 Highway 66<br/>
+                                Westchester, OH 40909<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Smith Bros.
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Smith Bros.</h3>
+                                <p>22 S Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 01-23-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Subby's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Subby's</h3>
+                                <p>600 State Rt 47<br/>
+                                Sidney, OH 45365<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 02-04-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Sweetheart's Grille
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Sweetheart's Grille</h3>
+                                <p>400 Musical Ln<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-17-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>                
+                    <li class="ui-screen-hidden">TJ
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>TJ</h3>
+                                <p>677 Business Blvd<br/>
+                                Westchester, OH 45599<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 02-05-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="ui-screen-hidden">Trade 'em Ins
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Trade 'em Ins</h3>
+                                <p>700 Trustway Blvd<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-23-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                   
+                    
+                    
+               
+                <div class="itemBrowse">
+                  <h2>Browse your Pebbles</h2>
+    
+                    <ul data-role="listview" data-inset="true" data-theme="a">
+                        <li>
+                        	<img src="img/Restaurant.png" class="mainListImg">
+                            <h3 class="mainListHeader">Restaurant</h3>
+                             <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+                                <li>Bella's
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Bella's</h3>
+                                        	<p>700 Folkerth Ave<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 9<br/>
+                                            Date of Visit: 01-21-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Flo's Diner
+                                    <ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Flo's Diner</h3>
+                                        	<p>250 Main St<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 01-10-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Johnny's Pizza
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Johnny's Pizza</h3>
+                                        	<p>300 W Main St<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 01-30-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Mikey's Pizza
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Mikey's Pizza</h3>
+                                        	<p>900 Versailles Ave<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 02-01-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Rojo's
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Rojo's</h3>
+                                        	<p>233 3rd St<br/>
+                                            Lexington, KY 40511<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 01-10-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Subby's
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Subby's</h3>
+                                        	<p>600 State Rt 47<br/>
+                                            Sidney, OH 45365<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 02-04-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Sweetheart's Grille
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Sweetheart's Grille</h3>
+                                        	<p>400 Musical Ln<br/>
+                                            Lexington, KY 40505<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 01-17-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <img src="img/Gas%20Station.png" class="mainListImg">
+                            <h3 class="mainListHeader">Gas Station</h3>
+                             <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+                                <li>Family Guys
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Family Guys</h3>
+                                        	<p>Highway 44<br/>
+                                            Lexington, KY 40511<br/>
+                                            Rated: 6<br/>
+                                            Date of Visit: 02-02-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Fill 'er Up
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Fill 'er Up</h3>
+                                        	<p>865 James St<br/>
+                                            Xenia, OH 49905<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-02-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Johnson's BP
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Johnson's BP</h3>
+                                        	<p>800 Alameda Freeway<br/>
+                                            Lexington, KY 40505<br/>
+                                            Rated: 5<br/>
+                                            Date of Visit: 01-18-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Shelly's Shell
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Shelly's Shell</h3>
+                                        	<p>22 Fifth Ave<br/>
+                                            Dayton, OH 43001<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-15-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Showman's BP
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Showman's BP</h3>
+                                        	<p>877 Highway 66<br/>
+                                            Westchester, OH 40909<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-10-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Smith Bros.
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Smith Bros.</h3>
+                                        	<p>22 S Main St<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 6<br/>
+                                            Date of Visit: 01-23-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <img src="img/Retail%20Store.png" class="mainListImg">                        
+                            <h3 class="mainListHeader">Retail Store</h3>
+                             <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+                                <li>Dress Place
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Dress Place</h3>
+                                        	<p>455 Major Way<br/>
+                                            Sidney, OH 45365<br/>
+                                            Rated: 6<br/>
+                                            Date of Visit: 02-04-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Joey's Pet Mart
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Joey's Pet Mart</h3>
+                                        	<p>6600 Martin Ave<br/>
+                                            Lexington, KY 40511<br/>
+                                            Rated: 5<br/>
+                                            Date of Visit: 01-28-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Lucky's Garage Warehouse
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Lucky's Garage Warehouse</h3>
+                                        	<p>465 Circle Dr<br/>
+                                            Sidney, OH 45365<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 02-02-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Mac's Clothing for Kids
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Mac's Clothing for Kids</h3>
+                                        	<p>455 Fifth St<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-05-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Michael's
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Michael's</h3>
+                                        	<p>55 Allen Way<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-25-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>TJ
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>TJ</h3>
+                                        	<p>677 Business Blvd<br/>
+                                            Westchester, OH 45599<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 02-05-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Trade 'em Ins
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Trade 'em Ins</h3>
+                                        	<p>700 Trustway Blvd<br/>
+                                            Lexington, KY 40505<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-23-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <img src="img/city.png" class="mainListImg">                        
+                            <h3 class="mainListHeader">Browse by City</h3>
+                             <ul data-role="listview" data-inset="true" data-filter="true" data-theme="a">
+                             	<li data-role="list-divider">Kentucky
+                                <li>Frankfort
+                                	 <ul data-role="listview" data-inset="true" data-filter="true">
+                                       <li>Bella's 
+                                       		<ul data-role="listview" data-inset="true">
+                                            	<li>
+                                                    <h3>Bella's</h3>
+                                                    <p>700 Folkerth Ave<br/>
+                                                    Frankfort, KY 40601<br/>
+                                                    Rated: 9<br/>
+                                                    Date of Visit: 01-21-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                       </li>
+                                       <li>Flo's Diner
+                                            <ul data-role="listview" data-inset="true">
+                                            	<li>
+                                                    <h3>Flo's Diner</h3>
+                                                    <p>250 Main St<br/>
+                                                    Frankfort, KY 40601<br/>
+                                                    Rated: 8<br/>
+                                                    Date of Visit: 01-10-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                       </li>
+                                    <li>Johnny's Pizza
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Johnny's Pizza</h3>
+                                                <p>300 W Main St<br/>
+                                                Frankfort, KY 40601<br/>
+                                                Rated: 8<br/>
+                                                Date of Visit: 01-30-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Mac's Clothing for Kids
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Mac's Clothing for Kids</h3>
+                                                <p>455 Fifth St<br/>
+                                                Frankfort, KY 40601<br/>
+                                                Rated: 7<br/>
+                                                Date of Visit: 01-05-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Michael's
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Michael's</h3>
+                                                <p>55 Allen Way<br/>
+                                                Frankfort, KY 40601<br/>
+                                                Rated: 7<br/>
+                                                Date of Visit: 01-25-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Mikey's Pizza
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Mikey's Pizza</h3>
+                                                <p>900 Versailles Ave<br/>
+                                                Frankfort, KY 40601<br/>
+                                                Rated: 7<br/>
+                                                Date of Visit: 02-01-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Smith Bros.
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Smith Bros.</h3>
+                                                <p>22 S Main St<br/>
+                                                Frankfort, KY 40601<br/>
+                                                Rated: 6<br/>
+                                                Date of Visit: 01-23-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   </ul>                                
+                                  </li>
+                                <li>Lexington
+                                   <ul data-role="listview" data-inset="true" data-filter="true">
+                                    <li>Family Guys
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Family Guys</h3>
+                                                <p>Highway 44<br/>
+                                                Lexington, KY 40511<br/>
+                                                Rated: 6<br/>
+                                                Date of Visit: 02-02-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   <li>Johnson's BP
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Johnson's BP</h3>
+                                                <p>800 Alameda Freeway<br/>
+                                                Lexington, KY 40505<br/>
+                                                Rated: 5<br/>
+                                                Date of Visit: 01-18-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   <li>Rojo's
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Rojo's</h3>
+                                                <p>233 3rd St<br/>
+                                                Lexington, KY 40511<br/>
+                                                Rated: 8<br/>
+                                                Date of Visit: 01-10-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Sweetheart's Grille
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Sweetheart's Grille</h3>
+                                                <p>400 Musical Ln<br/>
+                                                Lexington, KY 40505<br/>
+                                                Rated: 8<br/>
+                                                Date of Visit: 01-17-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Trade 'em Ins
+                                        <ul data-role="listview" data-inset="true">
+                                            <li>
+                                                <h3>Trade 'em Ins</h3>
+                                                <p>700 Trustway Blvd<br/>
+                                                Lexington, KY 40505<br/>
+                                                Rated: 7<br/>
+                                                Date of Visit: 01-23-2013
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    </ul>                                
+                                 </li>
+                                </li>                             	
+                                <li data-role="list-divider">Ohio
+								<li>Dayton
+                                      <ul data-role="listview" data-inset="true" data-filter="true">
+                                        <li>Shelly's Shell
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>Shelly's Shell</h3>
+                                                    <p>22 Fifth Ave<br/>
+                                                    Dayton, OH 43001<br/>
+                                                    Rated: 7<br/>
+                                                    Date of Visit: 01-15-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                       </ul>
+                                    </li><!--Dayton End -->
+                                   
+                                    <li>Sidney
+                                       <ul data-role="listview" data-inset="true" data-filter="true">
+                                        <li>Dress Place
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>Dress Place</h3>
+                                                    <p>455 Major Way<br/>
+                                                    Sidney, OH 45365<br/>
+                                                    Rated: 6<br/>
+                                                    Date of Visit: 02-04-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>Lucky's Garage Warehouse
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>Lucky's Garage Warehouse</h3>
+                                                    <p>465 Circle Dr<br/>
+                                                    Sidney, OH 45365<br/>
+                                                    Rated: 7<br/>
+                                                    Date of Visit: 02-02-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>Subby's
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>Subby's</h3>
+                                                    <p>600 State Rt 47<br/>
+                                                    Sidney, OH 45365<br/>
+                                                    Rated: 8<br/>
+                                                    Date of Visit: 02-04-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                       </ul>
+                                    </li><!--Sidney End -->
+                                    
+                                    
+                                    <li>Westchester
+                                      <ul data-role="listview" data-inset="true" data-filter="true">
+                                        <li>Showman's BP
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>Showman's BP</h3>
+                                                    <p>877 Highway 66<br/>
+                                                    Westchester, OH 40909<br/>
+                                                    Rated: 7<br/>
+                                                    Date of Visit: 01-10-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>TJ
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>TJ</h3>
+                                                    <p>677 Business Blvd<br/>
+                                                    Westchester, OH 45599<br/>
+                                                    Rated: 7<br/>
+                                                    Date of Visit: 02-05-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        </ul>
+                                    </li><!--Westchester End -->
+                                    
+                                    <li>Xenia
+                                       <ul data-role="listview" data-inset="true" data-filter="true">
+                                        <li>Fill 'er Up
+                                            <ul data-role="listview" data-inset="true">
+                                                <li>
+                                                    <h3>Fill 'er Up</h3>
+                                                    <p>865 James St<br/>
+                                                    Xenia, OH 49905<br/>
+                                                    Rated: 7<br/>
+                                                    Date of Visit: 01-02-2013
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                       </ul>
+                                    </li><!--Xenia End -->
+                             </ul>
+                        </li>
+                        <li>
+                          <img src="img/star.png" class="mainListImg">                        
+                            <h3 class="mainListHeader">Favorites</h3>
+                             <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+                                <li>Dress Place
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Dress Place</h3>
+                                        	<p>455 Major Way<br/>
+                                            Sidney, OH 45365<br/>
+                                            Rated: 6<br/>
+                                            Date of Visit: 02-04-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Family Guys
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Family Guys</h3>
+                                        	<p>Highway 44<br/>
+                                            Lexington, KY 40511<br/>
+                                            Rated: 6<br/>
+                                            Date of Visit: 02-02-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Flo's Diner
+                                    <ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Flo's Diner</h3>
+                                        	<p>250 Main St<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 01-10-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Johnson's BP
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Johnson's BP</h3>
+                                        	<p>800 Alameda Freeway<br/>
+                                            Lexington, KY 40505<br/>
+                                            Rated: 5<br/>
+                                            Date of Visit: 01-18-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Lucky's Garage Warehouse
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Lucky's Garage Warehouse</h3>
+                                        	<p>465 Circle Dr<br/>
+                                            Sidney, OH 45365<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 02-02-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Mac's Clothing for Kids
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Mac's Clothing for Kids</h3>
+                                        	<p>455 Fifth St<br/>
+                                            Frankfort, KY 40601<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-05-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Rojo's
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Rojo's</h3>
+                                        	<p>233 3rd St<br/>
+                                            Lexington, KY 40511<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 01-10-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Showman's BP
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Showman's BP</h3>
+                                        	<p>877 Highway 66<br/>
+                                            Westchester, OH 40909<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-10-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Subby's
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Subby's</h3>
+                                        	<p>600 State Rt 47<br/>
+                                            Sidney, OH 45365<br/>
+                                            Rated: 8<br/>
+                                            Date of Visit: 02-04-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Trade 'em Ins
+                                	<ul data-role="listview" data-inset="true">
+                                    	<li>
+                                        	<h3>Trade 'em Ins</h3>
+                                        	<p>700 Trustway Blvd<br/>
+                                            Lexington, KY 40505<br/>
+                                            Rated: 7<br/>
+                                            Date of Visit: 01-23-2013
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                             </ul>
+                        </li>
+                        
+                    </ul>
+                 </div>
+                    
+                    <div class="ui-grid-b">
+                        <div class="ui-block-a imgBlock"><a href="#retail" data-role="button" data-theme="a"><img class="imgAlign" src="img/Retail Store.png"><br/>Retail</a></div>
+                        <div class="ui-block-b imgBlock"><a href="#gas" data-role="button" data-theme="a"><img class="imgAlign" src="img/Gas Station.png"><br/>Gas</a></div>
+                        <div class="ui-block-c imgBlock"><a href="#food" data-role="button" data-theme="a"><img class="imgAlign" src="img/Restaurant.png"><br/>Food</a></div>
+                    </div><!-- /grid-b -->
+
+
+	</div><!-- /content -->
+    
+    	<div data-position="fixed" data-role="navbar" data-id="footer" data-theme="a"><!-- /footer -->
+        	<ul>
+				<li><a href="#home" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-ajax="false" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div><!-- /footer -->
+	</div><!-- /page -->
+        
+<!-- About page -->
+
+    <div data-role="page" id="about" data-url="about" data-theme="a" class="about">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content">
+            <p>
+            Pebbly is an app that lets you save your favorite places so you can retrace your steps.
+            </p>
+            <div data-theme="a">
+                <h2>About</h2>
+                    <ul data-role="listview" data-inset="true" data-theme="a">
+                        <li><a href="https://github.com/mistafi/MIU/tree/MIU-Working-Copy">Main Git</a></li>
+                        <li><a href="https://github.com/mistafi/MIU/tree/MIU-Working-Copy/MIU_Wisecup_Joshua_project2">Project Git</a></li>
+                        <li><a href="https://github.com/mistafi/MIU/tree/MIU-Working-Copy/MIU_Wisecup_Joshua_project2/gold">Gold Project</a></li>
+                        <li><a href="https://github.com/mistafi/MIU/tree/MIU-Working-Copy/MIU_Wisecup_Joshua_project2/bronze">Bronze Project</a></li>
+                    </ul>
+            </div>
+            <h2>The Creator</h2>
+            	Joshua is a web designer who loves to travel, and visit new and unique places. This app was born out of the idea that there are people out there who have the same adventurous heart, and want to go back again!
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" class="ui-btn-active ui-state-persist" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div>
+	</div><!-- /page -->
+<!-- END About page -->
+
+<!-- Add Item page -->
+    <div data-role="page" id="newItem" data-url="newItem" data-theme="a" class="newItem">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+
+	<div data-role="content" id="mainFormContainer" class="addItem" >	
+
+               <div data-role="navbar">
+                    <ul class="nav nav-pills">
+                      <li><a id="clearData" href="#"><i class="icon-remove"></i> Clear Stored Data</a></li>
+                      <li><a id="displayDataLink" href="#editItemPage"><i class="icon-list"></i> Display Data</a></li>
+                    </ul>  
+				</div>  
+                 
+                 <ul id="errorMessages"></ul>
+                 <h2>Add a Pebble</h2>
+
+                 <form action="#" method="post" class="form-horizontal" id="pebbleForm" data-ajax=”false”>
+                  <div class="control-group" data-role="fieldcontain">
+                    <label id="labelSelect" class="control-label" for="dropdownSelect">Type*</label>
+                    	<select id="dropdownSelect" data-native-menu="false" data-theme="a">
+                        	<option value="--Choose a Type--">--Choose a Type--</option>
+                        	<option value="Restaurant">Restaurant</option>
+                        	<option value="Gas Station">Gas Station</option>
+                        	<option value="Retail Store">Retail Store</option>
+                        </select>
+<!--                            <div id="selectDiv" class="controls">
+                    		</div>-->
+                        <span class="example">Please select a Pebble type.</span>
+                  </div>
+                                       
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputName">Name*</label>
+                      <input type="text" id="inputName" placeholder="Establishment Name" class="required">
+                      <span class="example">Please enter the name of the Pebble.</span>
+                  </div>
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputAddress">Address*</label>
+                      <input type="text" id="inputAddress" placeholder="Address" class="required">
+                      <span class="example">Please enter your home address.</span>
+                  </div>                  
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputAddress2">Address 2</label>
+                      <input type="text" id="inputAddress2" placeholder="Apt or Suite #">
+                  </div> 
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputCity">City*</label>
+                      <input type="text" id="inputCity" placeholder="City" class="required">
+                      <span class="example">Please enter your city.</span>
+                  </div>                  
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputState">State*</label>
+                      <input type="text" id="inputState" placeholder="State" class="required">
+                      <span class="example">Please enter your state i.e. KY</span>
+                  </div>  
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputZip">Zip Code*</label>
+                      <input type="text" id="inputZip" placeholder="Zip Code" class="required">
+                    <span class="example">Please enter a five digit zip code.</span>
+                  </div>  
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputRating">Rating</label>
+                     <input type="range" min="0" max="10" step="1" value="5" id="inputRating">
+                      <span class="example">How would you rate your experience?</span>
+                  </div> 
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputDate">Date of Visit</label>
+                      <input type="date" id="inputDate">
+                      <span class="example">When was your recent visit?</span>
+                  </div> 
+                  <div class="control-group">
+                      <input type="hidden" id="inputHidden" value="Text">
+                  </div>
+                  <div class="control-group" data-role="fieldcontain">
+                    <label class="control-label" for="inputArea">Notes</label>
+						<textarea id="inputArea" rows="3" placeholder="What did you want to remember?"></textarea>                    
+                  </div> 
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                           <legend>Add to Favorites</legend>
+                           <input type="checkbox" name="checkbox-agree" id="addfav" class="custom" value="Yes" data-theme="a"/>
+                           <label class="checkbox" for="addfav">Yes</label>
+                        </fieldset>
+                    </div>                    
+                    
+                          	<input type="submit" id="submit" class="btn btn-large btn-block btn-success ui-block-b" value="Add Pebble" data-theme="b">
+                          	<input type="submit" id="submit2" class="btn btn-large btn-block btn-success ui-block-b" value="Edit Pebble" data-theme="b">
+                          	<input type="reset" id="reset" class="btn btn-large btn-block btn-info" value="Reset" data-theme="a">
+                </form>
+    
+
+	</div><!-- /content -->
+
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" class="ui-btn-active ui-state-persist" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>
+    
+    
+<!-- END Add Item page -->
+
+
+
+<!-- END Add Item page -->
+
+
+    <div data-role="page" id="editItemPage" data-url="edit" class="editItemPage" data-theme="a" data-add-back-btn="true">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content" id="editFormContainer">
+ 
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>
+ 
+<!-- All Item page -->
+    <div data-role="page" id="viewAll" data-url="viewAll" data-theme="a" class="viewAll">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content">
+                <h2>View All</h2>
+
+                 <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+        
+                    <li>Bella's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Bella's</h3>
+                                <p>700 Folkerth Ave<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 9<br/>
+                                Date of Visit: 01-21-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Dress Place
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Dress Place</h3>
+                                <p>455 Major Way<br/>
+                                Sidney, OH 45365<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 02-04-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>   
+                    <li>Family Guys
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Family Guys</h3>
+                                <p>Highway 44<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 02-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Fill 'er Up
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Fill 'er Up</h3>
+                                <p>865 James St<br/>
+                                Xenia, OH 49905<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Flo's Diner
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Flo's Diner</h3>
+                                <p>250 Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Joey's Pet Mart
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Joey's Pet Mart</h3>
+                                <p>6600 Martin Ave<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 5<br/>
+                                Date of Visit: 01-28-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>  
+                    <li>Johnny's Pizza
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Johnny's Pizza</h3>
+                                <p>300 W Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-30-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>        
+                    <li>Johnson's BP
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Johnson's BP</h3>
+                                <p>800 Alameda Freeway<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 5<br/>
+                                Date of Visit: 01-18-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Lucky's Garage Warehouse
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Lucky's Garage Warehouse</h3>
+                                <p>465 Circle Dr<br/>
+                                Sidney, OH 45365<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 02-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Mac's Clothing for Kids
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Mac's Clothing for Kids</h3>
+                                <p>455 Fifth St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-05-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Michael's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Michael's</h3>
+                                <p>55 Allen Way<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-25-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Mikey's Pizza
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Mikey's Pizza</h3>
+                                <p>900 Versailles Ave<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 02-01-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Rojo's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Rojo's</h3>
+                                <p>233 3rd St<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Shelly's Shell
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Shelly's Shell</h3>
+                                <p>22 Fifth Ave<br/>
+                                Dayton, OH 43001<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-15-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Showman's BP
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Showman's BP</h3>
+                                <p>877 Highway 66<br/>
+                                Westchester, OH 40909<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Smith Bros.
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Smith Bros.</h3>
+                                <p>22 S Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 01-23-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Subby's
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Subby's</h3>
+                                <p>600 State Rt 47<br/>
+                                Sidney, OH 45365<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 02-04-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Sweetheart's Grille
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Sweetheart's Grille</h3>
+                                <p>400 Musical Ln<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 8<br/>
+                                Date of Visit: 01-17-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>                
+                    <li>TJ
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>TJ</h3>
+                                <p>677 Business Blvd<br/>
+                                Westchester, OH 45599<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 02-05-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Trade 'em Ins
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Trade 'em Ins</h3>
+                                <p>700 Trustway Blvd<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-23-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" class="ui-btn-active ui-state-persist" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>    
+    
+<!-- END All Item page -->
+
+<!-- food page -->
+    <div data-role="page" data-url="food" id="food" class="food" data-theme="a">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content" data-theme="a">
+                <h2>Restaurants</h2>
+
+                 <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+            <li>Bella's
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Bella's</h3>
+                        <p>700 Folkerth Ave<br/>
+                        Frankfort, KY 40601<br/>
+                        Rated: 9<br/>
+                        Date of Visit: 01-21-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>Flo's Diner
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Flo's Diner</h3>
+                        <p>250 Main St<br/>
+                        Frankfort, KY 40601<br/>
+                        Rated: 8<br/>
+                        Date of Visit: 01-10-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>Johnny's Pizza
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Johnny's Pizza</h3>
+                        <p>300 W Main St<br/>
+                        Frankfort, KY 40601<br/>
+                        Rated: 8<br/>
+                        Date of Visit: 01-30-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>Mikey's Pizza
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Mikey's Pizza</h3>
+                        <p>900 Versailles Ave<br/>
+                        Frankfort, KY 40601<br/>
+                        Rated: 7<br/>
+                        Date of Visit: 02-01-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>Rojo's
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Rojo's</h3>
+                        <p>233 3rd St<br/>
+                        Lexington, KY 40511<br/>
+                        Rated: 8<br/>
+                        Date of Visit: 01-10-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>Subby's
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Subby's</h3>
+                        <p>600 State Rt 47<br/>
+                        Sidney, OH 45365<br/>
+                        Rated: 8<br/>
+                        Date of Visit: 02-04-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>Sweetheart's Grille
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <h3>Sweetheart's Grille</h3>
+                        <p>400 Musical Ln<br/>
+                        Lexington, KY 40505<br/>
+                        Rated: 8<br/>
+                        Date of Visit: 01-17-2013
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>
+
+
+    <div data-role="page" id="gas" data-url="gas" class="gas" data-theme="a">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content">
+                <h2>Gas Stations</h2>
+
+                 <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+                    <li>Family Guys
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Family Guys</h3>
+                                <p>Highway 44<br/>
+                                Lexington, KY 40511<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 02-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Fill 'er Up
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Fill 'er Up</h3>
+                                <p>865 James St<br/>
+                                Xenia, OH 49905<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-02-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Johnson's BP
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Johnson's BP</h3>
+                                <p>800 Alameda Freeway<br/>
+                                Lexington, KY 40505<br/>
+                                Rated: 5<br/>
+                                Date of Visit: 01-18-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Shelly's Shell
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Shelly's Shell</h3>
+                                <p>22 Fifth Ave<br/>
+                                Dayton, OH 43001<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-15-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Showman's BP
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Showman's BP</h3>
+                                <p>877 Highway 66<br/>
+                                Westchester, OH 40909<br/>
+                                Rated: 7<br/>
+                                Date of Visit: 01-10-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Smith Bros.
+                        <ul data-role="listview" data-inset="true">
+                            <li>
+                                <h3>Smith Bros.</h3>
+                                <p>22 S Main St<br/>
+                                Frankfort, KY 40601<br/>
+                                Rated: 6<br/>
+                                Date of Visit: 01-23-2013
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>
+    
+    
+    <div data-role="page" id="retail" data-url="retail" class="retail" data-theme="a">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content">
+                <h2>Retail Stores</h2>
+
+                 <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-theme="a">
+
+        <li>Dress Place
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Dress Place</h3>
+                    <p>455 Major Way<br/>
+                    Sidney, OH 45365<br/>
+                    Rated: 6<br/>
+                    Date of Visit: 02-04-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li>Joey's Pet Mart
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Joey's Pet Mart</h3>
+                    <p>6600 Martin Ave<br/>
+                    Lexington, KY 40511<br/>
+                    Rated: 5<br/>
+                    Date of Visit: 01-28-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li>Lucky's Garage Warehouse
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Lucky's Garage Warehouse</h3>
+                    <p>465 Circle Dr<br/>
+                    Sidney, OH 45365<br/>
+                    Rated: 7<br/>
+                    Date of Visit: 02-02-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li>Mac's Clothing for Kids
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Mac's Clothing for Kids</h3>
+                    <p>455 Fifth St<br/>
+                    Frankfort, KY 40601<br/>
+                    Rated: 7<br/>
+                    Date of Visit: 01-05-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li>Michael's
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Michael's</h3>
+                    <p>55 Allen Way<br/>
+                    Frankfort, KY 40601<br/>
+                    Rated: 7<br/>
+                    Date of Visit: 01-25-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li>TJ
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>TJ</h3>
+                    <p>677 Business Blvd<br/>
+                    Westchester, OH 45599<br/>
+                    Rated: 7<br/>
+                    Date of Visit: 02-05-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li>Trade 'em Ins
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Trade 'em Ins</h3>
+                    <p>700 Trustway Blvd<br/>
+                    Lexington, KY 40505<br/>
+                    Rated: 7<br/>
+                    Date of Visit: 01-23-2013
+                    </p>
+                </li>
+            </ul>
+        </li>
+        </ul>
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>
+    
+    
+    
+    <div data-role="page" id="404" data-url="404" class="404" data-theme="a">
+
+        <div class="header" data-role="header" data-position="fixed" data-theme="a" data-add-back-btn="true">
+        	<h1>Pebbly</h1>
+        </div>
+        
+        <div data-role="content">
+              <p>We're sorry! The page you have reached does not exist. Let's go back to the beginning and try this again. 
+              </p>
+              <a href="#home" data-role="button" data-theme="c" data-inline="true">Go To Homepage</a>  
+        </div>
+
+    	<div data-position="fixed" data-role="navbar" data-id="footer">
+        	<ul>
+				<li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#about" data-icon="info">About</a></li>
+				<li><a href="#newItem" data-icon="grid">Add New</a></li>
+				<li><a href="#viewAll" data-icon="star">View All</a></li>
+			</ul>
+        </div> 
+        
+    </div>
+       
+	</body>
+</html>

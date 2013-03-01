@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+    	<!-- MIU Project 4 -->
+    	<!-- Joshua Wisecup -->
+    	<!-- Term 1302 -->
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>Pebbly</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="pebbly, pebble, track, location, retrace, follow">
+        <meta name="description" content="Keep track of where you've been so you can retrace your steps.">
+        <meta name="author" content="Joshua Wisecup">
+        <meta name="robots" content="noindex,nofollow">
+
+         <!-- Le styles -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <link href="css/bronze.css" rel="stylesheet">
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+ 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+        </script>
+        <![endif]-->
+
+    	<!-- Le fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="img/favicon.png">
+	</head>
+
+    <body>
+    
+    <div class="homepage" data-role="page">
+    
+	<div class="outerContainer headerRow">
+		<div class="container">
+          <div class="row">
+            <div class="span12">
+              <header data-role="header">
+                 <h1>
+                    <a class="pebblyLogo" title="Link to Pebbly" href="index.html" data-ajax="false">
+                        Pebbly
+                    </a>
+                </h1>
+             </header>
+            </div>
+          </div>
+		</div>
+	</div>
+
+	<div data-role="content">	
+
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/pebble.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Retrace Your Steps</h1>
+              <a class="btn btn-large btn-primary" href="additem.html" data-ajax="false">Add a Pebble</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/coffee.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Great Coffee? Yes.</h1>
+              <a class="btn btn-large btn-primary" href="additem.html" data-ajax="false">Add a Pebble</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/gas.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Unique Pit Stop</h1>
+              <a class="btn btn-large btn-primary" href="additem.html" data-ajax="false">Add a Pebble</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div>
+  
+	<div class="outerContainer bodyRow">
+		<div class="container">
+            <div class="row">
+              <div class="span12">
+                  <p class="lead">Save your faves. Get back again.</p>
+                  <p class="searchBar">
+                      <span class="navbar-form input-append">
+                      <label for="terms" class="hidden">Search Pebbles</label>
+                      <input class="input-block-level" type="text" id="terms" name="terms" value="Search Pebbles" onblur="if(this.value=='')this.value='Search'" onfocus="if(this.value=='Search')this.value=''">
+                      <a class="btn" href="#" onclick="searchQuery(); return false;"><i class="icon-search"></i></a>
+                      </span>
+					<div class="itemBrowse">
+                      <h2>Browse your Pebbles</h2>
+
+                      <div class="well">
+                        <ul class="unstyled">
+                            <li>
+                                <a class="btn btn-large" href="food.html" data-ajax="false">Restaurant<i class="icon-chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-large" href="gas.html" data-ajax="false">Gas Station<i class="icon-chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-large" href="retail.html" data-ajax="false">Retail Store<i class="icon-chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-large" href="404.html" data-ajax="false">Browse by City<i class="icon-chevron-right"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-large" href="404.html" data-ajax="false">Favorites<i class="icon-chevron-right"></i></a>
+                            </li>
+                            
+                        </ul>
+                      </div>
+                      <div class="well">
+                      	<div class="ui-grid-b">
+                        <div class="ui-block-a imgBlock"><a href="retail.html" data-ajax="false" data-role="button" data-theme="c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><img class="imgAlign" src="img/Retail Store.png"></span></a></div>
+                        <div class="ui-block-b imgBlock"><a href="gas.html" data-ajax="false" data-role="button" data-theme="c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><img class="imgAlign" src="img/Gas Station.png"></span></a></div>
+                        <div class="ui-block-c imgBlock"><a href="food.html" data-ajax="false" data-role="button" data-theme="c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all"><span class="ui-btn-inner ui-btn-corner-all"><img class="imgAlign" src="img/Restaurant.png"></span></a></div>
+                    </div>
+                      
+                      </div>
+                      
+                      
+                      
+                     </div>
+                 </p>
+
+              </div>
+			</div>
+		</div>
+    </div>
+
+	</div><!-- /content -->
+    
+    <footer data-role="footer">
+        <div class="outerContainer footerRow">
+            <div class="container">
+                <div class="row">
+                     <div class="navbar">
+                      <div class="navbar-inner">
+                        <ul class="nav">
+                          <li class="active"><a href="#">Home</a></li>
+                          <li><a href="about.html">About</a></li>
+                          <li><a href="additem.html">Form</a></li>
+                          <li><a href="all.html">View All</a></li>
+                          <li><a href="news.html">News</a></li>
+                        </ul>
+                      </div>
+                    </div>                
+				</div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+
+
+    
+        <!-- Le javascript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <!--<script src="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.js"></script> -->
+        <script src="js/bootstrap.js"></script>
+	</div><!-- /page -->
+	</body>
+</html>

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* CSS Document 
+MIU Project 4 Bronze
+Joshua Wisecup
+Term 1302 
+*/
+
+
+.ui-grid {
+	margin: 0 0 0 -13px;	
+	position: relative;
+}
+
+.imgBlock {
+	text-align:center;
+}
+
+
